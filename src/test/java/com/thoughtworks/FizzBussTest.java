@@ -59,7 +59,7 @@ public class FizzBussTest {
     }
 
     @Test
-    public void should_return_fizzbuss_when_fizzbuss_given_15(){
+    public void should_return_buss_when_fizzbuss_given_15(){
         //Give
         int number = 15;
         FizzBuss fizzBuss = new FizzBuss();
@@ -68,7 +68,7 @@ public class FizzBussTest {
         String word = fizzBuss.fizzBussGame(number);
 
         //Then
-        assertThat(word, is("fizzbuss"));
+        assertThat(word, is("buss"));
     }
 
     @Test
@@ -86,7 +86,7 @@ public class FizzBussTest {
 
 
     @Test
-    public void should_return_fizzbusswhizz_when_fizzbuss_given_105(){
+    public void should_return_busswhizz_when_fizzbuss_given_105(){
         //Give
         int number = 105;
         FizzBuss fizzBuss = new FizzBuss();
@@ -95,7 +95,7 @@ public class FizzBussTest {
         String word = fizzBuss.fizzBussGame(number);
 
         //Then
-        assertThat(word, is("fizzbusswhizz"));
+        assertThat(word, is("busswhizz"));
     }
 
     @Test
@@ -122,6 +122,58 @@ public class FizzBussTest {
 
         //Then
         assertThat(word, is("busswhizz"));
+    }
+
+    @Test
+    public void should_return_busswhizz_when_fizzbuss_given_75(){
+        //Give
+        int number = 75;
+        FizzBuss fizzBuss = new FizzBuss();
+
+        //When
+        String word = fizzBuss.fizzBussGame(number);
+
+        //Then
+        assertThat(word, is("fizz"));
+    }
+
+    @Test
+    public void should_return_fizz_when_fizzbuss_given_753(){
+        //Give
+        int number = 753;
+        FizzBuss fizzBuss = new FizzBuss();
+
+        //When
+        String word = fizzBuss.fizzBussGame(number);
+
+        //Then
+        assertThat(word, is("fizz"));
+    }
+
+    @Test
+    public void should_return_153_when_fizzbuss_given_153(){
+        //Give
+        int number = 153;
+        FizzBuss fizzBuss = new FizzBuss();
+
+        //When
+        String word = fizzBuss.fizzBussGame(number);
+
+        //Then
+        assertThat(word, is("153"));
+    }
+
+    @Test
+    public void should_return_fizz_when_fizzbuss_given_173(){
+        //Give
+        int number = 173;
+        FizzBuss fizzBuss = new FizzBuss();
+
+        //When
+        String word = fizzBuss.fizzBussGame(number);
+
+        //Then
+        assertThat(word, is("fizz"));
     }
 
 }
