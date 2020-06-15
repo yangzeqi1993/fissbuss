@@ -3,6 +3,9 @@ package com.thoughtworks;
 public class FizzBuss {
     public String fizzBussGame(int number){
         if(number%3 == 0){
+            if(String.valueOf(number).contains("3")){
+                return "fizz";
+            }
             if(number%5 == 0){
                 if(number%7 == 0){
                     return "fizzbusswhizz";
