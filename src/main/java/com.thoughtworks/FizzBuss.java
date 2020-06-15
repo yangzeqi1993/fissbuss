@@ -1,32 +1,27 @@
 package com.thoughtworks;
 
 public class FizzBuss {
-    public String fizzBussGame(int number){
-        if(String.valueOf(number).contains("3")){
-            return "fizz";
+    public String fizzBussGame(int number) {
+
+        String string = "";
+
+        if (number % 3 == 0) {
+            string += "fizz";
         }
-        if(number%3 == 0){
-            if(number%5 == 0){
-                if(number%7 == 0){
-                    return "fizzbusswhizz";
-                }else{
-                    return "fizzbuss";
-                }
-            }else{
-                if(number%7 == 0){
-                    return "fizzwhizz";
-                }
-            }
-            return "fizz";
-        }else if(number%5 == 0){
-            if(number%7 == 0){
-                return "busswhizz";
-            }else{
-                return "buss";
-            }
-        }else if(number%7 == 0){
-            return "whizz";
+        if (number % 5 == 0) {
+            string += "buss";
         }
-        return String.valueOf(number);
+        if (number % 7 == 0) {
+            string += "whizz";
+        }
+        if (number % 3 != 0 && number % 5 != 0 && number % 7 != 0) {
+            string = Integer.toString(number);
+        }
+
+        if (String.valueOf(number).contains("3")) {
+            string =  "fizz";
+        }
+
+        return string;
     }
 }

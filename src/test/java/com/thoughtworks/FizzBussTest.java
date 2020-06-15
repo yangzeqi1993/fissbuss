@@ -1,4 +1,5 @@
-import com.thoughtworks.FizzBuss;
+package com.thoughtworks;
+
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
