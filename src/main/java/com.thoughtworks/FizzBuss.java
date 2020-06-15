@@ -2,15 +2,27 @@ package com.thoughtworks;
 
 public class FizzBuss {
     public String fizzBussGame(int number){
-        if(number%3 == 0 && number%5 != 0){
+        if(number%3 == 0){
+            if(number%5 == 0){
+                if(number%7 == 0){
+                    return "fizzbusswhizz";
+                }else{
+                    return "fizzbuss";
+                }
+            }else{
+                if(number%7 == 0){
+                    return "fizzwhizz";
+                }
+            }
             return "fizz";
-        }
-        if(number%5 == 0 && number%3 != 0){
-            return "buss";
-        }
-
-        if(number%5 == 0 && number%3 == 0){
-            return "fizzbuss";
+        }else if(number%5 == 0){
+            if(number%7 == 0){
+                return "busswhizz";
+            }else{
+                return "buss";
+            }
+        }else if(number%7 == 0){
+            return "whizz";
         }
         return String.valueOf(number);
     }
