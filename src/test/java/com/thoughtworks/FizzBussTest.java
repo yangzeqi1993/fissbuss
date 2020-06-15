@@ -43,4 +43,17 @@ public class FizzBussTest {
         //Then
         assertThat(word, is("buss"));
     }
+
+    @Test
+    public void should_return_fizzbuss_when_fizzbuss_given_15(){
+        //Give
+        int number = 15;
+        FizzBuss fizzBuss = new FizzBuss();
+
+        //When
+        String word = fizzBuss.fizzBussGame(number);
+
+        //Then
+        assertThat(word, is("fizzbuss"));
+    }
 }
