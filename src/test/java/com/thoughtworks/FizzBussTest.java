@@ -84,7 +84,7 @@ public class FizzBussTest {
     }
 
     @Test
-    public void should_return_busswhizz_when_fizzbuss_given_35(){
+    public void should_return_fizz_when_fizzbuss_given_35(){
         //Give
         int number = 35;
         FizzBuss fizzBuss = new FizzBuss();
@@ -93,7 +93,7 @@ public class FizzBussTest {
         String word = fizzBuss.fizzBussGame(number);
 
         //Then
-        assertThat(word, is("busswhizz"));
+        assertThat(word, is("fizz"));
     }
 
     @Test
