@@ -19,8 +19,11 @@ public class FizzBuss {
         }
 
         if (String.valueOf(number).contains("3")) {
-            string =  "fizz";
+            if(!String.valueOf(number).contains("5")){
+                string =  "fizz";
+            }
         }
+
 
         return string;
     }
