@@ -167,7 +167,48 @@ public class MarsRoverTest {
         assertThat(coordinate.getLocalX(), is(8));
         assertThat(coordinate.getLocalY(), is(1));
         assertThat(coordinate.getDirection(), is("E"));
+    }
 
+    @Test
+    public void should_false_when_judgeBoundary_given_direction_5_5_N(){
+        //Given
+        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(5,5,"N");
+        MarsRover marsRover = new MarsRover();
+        marsRover.initMarsRover(currentCoordinate);
+
+        //When
+        boolean isBeyond = marsRover.judgeBoundary();
+
+        //Then
+        assertThat(isBeyond, is(false));
+    }
+
+    @Test
+    public void should_true_when_judgeBoundary_given_direction_0_6_N(){
+        //Given
+        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(0,6,"N");
+        MarsRover marsRover = new MarsRover();
+        marsRover.initMarsRover(currentCoordinate);
+
+        //When
+        boolean isBeyond = marsRover.judgeBoundary();
+
+        //Then
+        assertThat(isBeyond, is(true));
+    }
+
+    @Test
+    public void should_true_when_judgeBoundary_given_direction_negative6_0_S(){
+        //Given
+        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(-6,0,"S");
+        MarsRover marsRover = new MarsRover();
+        marsRover.initMarsRover(currentCoordinate);
+
+        //When
+        boolean isBeyond = marsRover.judgeBoundary();
+
+        //Then
+        assertThat(isBeyond, is(true));
     }
 
 }

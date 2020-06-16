@@ -4,7 +4,6 @@ public class MarsRover {
 
     public MarsRoverCoordinate marsRoverCoordinate;
 
-
     public MarsRoverCoordinate initMarsRover(MarsRoverCoordinate marsRoverCoordinate){
         return this.marsRoverCoordinate = marsRoverCoordinate;
     }
@@ -17,6 +16,7 @@ public class MarsRover {
             }else if("L".equals(String.valueOf(command)) || "R".equals(String.valueOf(command))){
                 this.marsRoverCoordinate = this.turn(String.valueOf(command));
             }
+            
         }
         return this.marsRoverCoordinate;
     }
@@ -89,6 +89,19 @@ public class MarsRover {
                 break;
         }
         return this.marsRoverCoordinate;
+    }
+
+    public boolean judgeBoundary(){
+        int upBoundaryX = 5;
+        int downBoundaryX = -5;
+        int upBoundaryY = 5;
+        int downBoundaryY = -5;
+        return (
+                this.marsRoverCoordinate.getLocalX() > upBoundaryX
+             || this.marsRoverCoordinate.getLocalX() < downBoundaryX
+             || this.marsRoverCoordinate.getLocalY() > upBoundaryY
+             || this.marsRoverCoordinate.getLocalY() < downBoundaryY
+        );
     }
 
 }
