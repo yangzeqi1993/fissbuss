@@ -12,11 +12,13 @@ public class MarsRover {
         char[] commandCharArray=commandStr.toCharArray();
         for(char command:commandCharArray){
             if ("N".equals(String.valueOf(command))){
+                if(this.judgeNextMoveBoundary()){
+                    break;
+                }
                 this.marsRoverCoordinate = this.move();
             }else if("L".equals(String.valueOf(command)) || "R".equals(String.valueOf(command))){
                 this.marsRoverCoordinate = this.turn(String.valueOf(command));
             }
-            
         }
         return this.marsRoverCoordinate;
     }
@@ -91,16 +93,21 @@ public class MarsRover {
         return this.marsRoverCoordinate;
     }
 
-    public boolean judgeBoundary(){
+    public boolean judgeNextMoveBoundary(){
         int upBoundaryX = 5;
         int downBoundaryX = -5;
         int upBoundaryY = 5;
         int downBoundaryY = -5;
+        boolean moveBeyondUpBoundaryX = (this.marsRoverCoordinate.getLocalX() == upBoundaryX && "E".equals(this.marsRoverCoordinate.getDirection()));
+        boolean moveBeyondDownBoundaryX = (this.marsRoverCoordinate.getLocalX() == downBoundaryX && "W".equals(this.marsRoverCoordinate.getDirection()));
+        boolean moveBeyondUpBoundaryY = (this.marsRoverCoordinate.getLocalY() == upBoundaryY && "N".equals(this.marsRoverCoordinate.getDirection()));
+        boolean moveBeyondDownBoundaryY = (this.marsRoverCoordinate.getLocalY() == downBoundaryY && "S".equals(this.marsRoverCoordinate.getDirection()));
+
         return (
-                this.marsRoverCoordinate.getLocalX() > upBoundaryX
-             || this.marsRoverCoordinate.getLocalX() < downBoundaryX
-             || this.marsRoverCoordinate.getLocalY() > upBoundaryY
-             || this.marsRoverCoordinate.getLocalY() < downBoundaryY
+                moveBeyondUpBoundaryX
+             || moveBeyondDownBoundaryX
+             || moveBeyondUpBoundaryY
+             || moveBeyondDownBoundaryY
         );
     }
 

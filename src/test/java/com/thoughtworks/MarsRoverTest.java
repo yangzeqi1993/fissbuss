@@ -153,7 +153,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void should_8_1_E_when_MarsRoverCommand_given_0_0_N_and_command_is_NLNNRLLLNNNNNNNNRLLRNN(){
+    public void should_5_1_E_when_MarsRoverCommand_given_0_0_N_and_command_is_NLNNRLLLNNNNNNNNRLLRNN(){
         //Given
         MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(0,0,"N");
         String command = "NLNNRLLLNNNNNNNNRLLRNN";
@@ -164,48 +164,48 @@ public class MarsRoverTest {
         MarsRoverCoordinate coordinate = marsRover.MarsRoverCommand(command);
 
         //Then
-        assertThat(coordinate.getLocalX(), is(8));
+        assertThat(coordinate.getLocalX(), is(5));
         assertThat(coordinate.getLocalY(), is(1));
         assertThat(coordinate.getDirection(), is("E"));
     }
 
     @Test
-    public void should_false_when_judgeBoundary_given_direction_5_5_N(){
+    public void should_false_when_judgeNextMoveBoundary_given_direction_5_5_S(){
         //Given
-        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(5,5,"N");
+        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(5,5,"S");
         MarsRover marsRover = new MarsRover();
         marsRover.initMarsRover(currentCoordinate);
 
         //When
-        boolean isBeyond = marsRover.judgeBoundary();
+        boolean isBeyond = marsRover.judgeNextMoveBoundary();
 
         //Then
         assertThat(isBeyond, is(false));
     }
 
     @Test
-    public void should_true_when_judgeBoundary_given_direction_0_6_N(){
+    public void should_true_when_judgeNextMoveBoundary_given_direction_0_5_N(){
         //Given
-        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(0,6,"N");
+        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(0,5,"N");
         MarsRover marsRover = new MarsRover();
         marsRover.initMarsRover(currentCoordinate);
 
         //When
-        boolean isBeyond = marsRover.judgeBoundary();
+        boolean isBeyond = marsRover.judgeNextMoveBoundary();
 
         //Then
         assertThat(isBeyond, is(true));
     }
 
     @Test
-    public void should_true_when_judgeBoundary_given_direction_negative6_0_S(){
+    public void should_true_when_judgeNextMoveBoundary_given_direction_negative5_0_S(){
         //Given
-        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(-6,0,"S");
+        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(-5,0,"W");
         MarsRover marsRover = new MarsRover();
         marsRover.initMarsRover(currentCoordinate);
 
         //When
-        boolean isBeyond = marsRover.judgeBoundary();
+        boolean isBeyond = marsRover.judgeNextMoveBoundary();
 
         //Then
         assertThat(isBeyond, is(true));
