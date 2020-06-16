@@ -103,7 +103,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void should_direction_E_when_right_turn_given_direction_is_N(){
+    public void should_direction_E_when_rightTurn_given_direction_is_N(){
         //Given
         String direction = "N";
         int X = 0;
@@ -124,7 +124,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void should_direction_W_when_left_turn_given_direction_is_N(){
+    public void should_direction_W_when_leftTurn_given_direction_is_N(){
         //Given
         String direction = "N";
         int X = 0;

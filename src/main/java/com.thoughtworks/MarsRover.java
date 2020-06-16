@@ -48,6 +48,21 @@ public class MarsRover {
     }
 
     public MarsRoverCoordinate rightTurn(MarsRoverCoordinate marsRoverCoordinate){
+        String currentDirection = marsRoverCoordinate.getDirection();
+        switch (currentDirection) {
+            case "N":
+                marsRoverCoordinate.setDirection("E");
+                break;
+            case "E":
+                marsRoverCoordinate.setDirection("S");
+                break;
+            case "S":
+                marsRoverCoordinate.setDirection("W");
+                break;
+            case "W":
+                marsRoverCoordinate.setDirection("N");
+                break;
+        }
         return marsRoverCoordinate;
     }
 }
