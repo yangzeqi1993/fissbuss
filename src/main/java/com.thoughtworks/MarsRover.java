@@ -2,78 +2,80 @@ package com.thoughtworks;
 
 public class MarsRover {
 
+    public MarsRoverCoordinate marsRoverCoordinate;
+
     public MarsRoverCoordinate initMarsRover(MarsRoverCoordinate marsRoverCoordinate){
-        return marsRoverCoordinate;
+        return this.marsRoverCoordinate = marsRoverCoordinate;
     }
 
-    public MarsRoverCoordinate move(MarsRoverCoordinate marsRoverCoordinate){
+    public MarsRoverCoordinate move(){
         int moveStep = 1;
-        String currentDirection = marsRoverCoordinate.getDirection();
+        String currentDirection = this.marsRoverCoordinate.getDirection();
         switch (currentDirection){
             case "N":
-                marsRoverCoordinate.setLocalY(marsRoverCoordinate.getLocalY()+moveStep);
+                this.marsRoverCoordinate.setLocalY(marsRoverCoordinate.getLocalY()+moveStep);
                 break;
             case "E":
-                marsRoverCoordinate.setLocalX(marsRoverCoordinate.getLocalX()+moveStep);
+                this.marsRoverCoordinate.setLocalX(marsRoverCoordinate.getLocalX()+moveStep);
                 break;
             case "S":
-                marsRoverCoordinate.setLocalY(marsRoverCoordinate.getLocalY()-moveStep);
+                this.marsRoverCoordinate.setLocalY(marsRoverCoordinate.getLocalY()-moveStep);
                 break;
             case "W":
-                marsRoverCoordinate.setLocalX(marsRoverCoordinate.getLocalX()-moveStep);
+                this.marsRoverCoordinate.setLocalX(marsRoverCoordinate.getLocalX()-moveStep);
                 break;
         }
         return marsRoverCoordinate;
     }
 
-    public MarsRoverCoordinate turn(MarsRoverCoordinate marsRoverCoordinate, String turnDirection){
+    public MarsRoverCoordinate turn(String turnDirection){
         switch (turnDirection) {
             case "L":
-                marsRoverCoordinate = this.leftTurn(marsRoverCoordinate);
+                this.marsRoverCoordinate = this.leftTurn();
                 break;
             case "R":
-                marsRoverCoordinate = this.rightTurn(marsRoverCoordinate);
+                this.marsRoverCoordinate = this.rightTurn();
                 break;
         }
-        return marsRoverCoordinate;
+        return this.marsRoverCoordinate;
     }
 
-    public MarsRoverCoordinate leftTurn(MarsRoverCoordinate marsRoverCoordinate) {
-        String currentDirection = marsRoverCoordinate.getDirection();
+    public MarsRoverCoordinate leftTurn() {
+        String currentDirection = this.marsRoverCoordinate.getDirection();
         switch (currentDirection) {
             case "N":
-                marsRoverCoordinate.setDirection("W");
+                this.marsRoverCoordinate.setDirection("W");
                 break;
             case "E":
-                marsRoverCoordinate.setDirection("N");
+                this.marsRoverCoordinate.setDirection("N");
                 break;
             case "S":
-                marsRoverCoordinate.setDirection("E");
+                this.marsRoverCoordinate.setDirection("E");
                 break;
             case "W":
-                marsRoverCoordinate.setDirection("S");
+                this.marsRoverCoordinate.setDirection("S");
                 break;
         }
-        return marsRoverCoordinate;
+        return this.marsRoverCoordinate;
     }
 
-    public MarsRoverCoordinate rightTurn(MarsRoverCoordinate marsRoverCoordinate){
-        String currentDirection = marsRoverCoordinate.getDirection();
+    public MarsRoverCoordinate rightTurn(){
+        String currentDirection = this.marsRoverCoordinate.getDirection();
         switch (currentDirection) {
             case "N":
-                marsRoverCoordinate.setDirection("E");
+                this.marsRoverCoordinate.setDirection("E");
                 break;
             case "E":
-                marsRoverCoordinate.setDirection("S");
+                this.marsRoverCoordinate.setDirection("S");
                 break;
             case "S":
-                marsRoverCoordinate.setDirection("W");
+                this.marsRoverCoordinate.setDirection("W");
                 break;
             case "W":
-                marsRoverCoordinate.setDirection("N");
+                this.marsRoverCoordinate.setDirection("N");
                 break;
         }
-        return marsRoverCoordinate;
+        return this.marsRoverCoordinate;
     }
 
 }

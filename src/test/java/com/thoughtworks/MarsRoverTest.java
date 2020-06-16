@@ -26,9 +26,10 @@ public class MarsRoverTest {
         //Given
         MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(0,0,"E");
         MarsRover marsRover = new MarsRover();
+        MarsRoverCoordinate coordinate = marsRover.initMarsRover(currentCoordinate);
 
         //When
-        MarsRoverCoordinate coordinate = marsRover.move(currentCoordinate);
+        coordinate = marsRover.move();
 
         //Then
         assertThat(coordinate.getLocalX(), is(1));
@@ -41,9 +42,10 @@ public class MarsRoverTest {
         //Given
         MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(0,0,"S");
         MarsRover marsRover = new MarsRover();
+        MarsRoverCoordinate coordinate = marsRover.initMarsRover(currentCoordinate);
 
         //When
-        MarsRoverCoordinate coordinate = marsRover.move(currentCoordinate);
+        coordinate = marsRover.move();
 
         //Then
         assertThat(coordinate.getLocalX(), is(0));
@@ -56,9 +58,10 @@ public class MarsRoverTest {
         //Given
         MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(0,0,"W");
         MarsRover marsRover = new MarsRover();
+        MarsRoverCoordinate coordinate = marsRover.initMarsRover(currentCoordinate);
 
         //When
-        MarsRoverCoordinate coordinate = marsRover.move(currentCoordinate);
+        coordinate = marsRover.move();
 
         //Then
         assertThat(coordinate.getLocalX(), is(-1));
@@ -71,9 +74,10 @@ public class MarsRoverTest {
         //Given
         MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(0,0,"N");
         MarsRover marsRover = new MarsRover();
+        MarsRoverCoordinate initCoordinate = marsRover.initMarsRover(currentCoordinate);
 
         //When
-        MarsRoverCoordinate coordinate = marsRover.move(currentCoordinate);
+        MarsRoverCoordinate coordinate = marsRover.move();
 
         //Then
         assertThat(coordinate.getLocalX(), is(0));
@@ -86,9 +90,10 @@ public class MarsRoverTest {
         //Given
         MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(0,0,"N");
         MarsRover marsRover = new MarsRover();
+        MarsRoverCoordinate coordinate = marsRover.initMarsRover(currentCoordinate);
 
         //When
-        MarsRoverCoordinate coordinate = marsRover.rightTurn(currentCoordinate);
+        coordinate = marsRover.rightTurn();
 
         //Then
         assertThat(coordinate.getLocalX(), is(0));
@@ -97,49 +102,52 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void should_direction_W_when_leftTurn_given_direction_is_N(){
+    public void should_direction_E_when_leftTurn_given_direction_is_S(){
         //Given
-        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(0,0,"N");
+        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(0,0,"S");
         MarsRover marsRover = new MarsRover();
+        MarsRoverCoordinate coordinate = marsRover.initMarsRover(currentCoordinate);
 
         //When
-        MarsRoverCoordinate coordinate = marsRover.leftTurn(currentCoordinate);
+        coordinate = marsRover.leftTurn();
 
         //Then
         assertThat(coordinate.getLocalX(), is(0));
         assertThat(coordinate.getLocalY(), is(0));
-        assertThat(coordinate.getDirection(), is("W"));
+        assertThat(coordinate.getDirection(), is("E"));
     }
 
     @Test
-    public void should_direction_W_when_turn_given_direction_is_N_and_turnDirection_is_L(){
+    public void should_direction_N_when_turn_given_direction_is_E_and_turnDirection_is_L(){
         //Given
         String turnDirection = "L";
-        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(0,0,"N");
+        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(0,0,"E");
         MarsRover marsRover = new MarsRover();
+        MarsRoverCoordinate coordinate = marsRover.initMarsRover(currentCoordinate);
 
         //When
-        MarsRoverCoordinate coordinate = marsRover.turn(currentCoordinate,turnDirection);
+        coordinate = marsRover.turn(turnDirection);
 
         //Then
         assertThat(coordinate.getLocalX(), is(0));
         assertThat(coordinate.getLocalY(), is(0));
-        assertThat(coordinate.getDirection(), is("W"));
+        assertThat(coordinate.getDirection(), is("N"));
     }
 
     @Test
-    public void should_direction_W_when_turn_given_direction_is_N_and_turnDirection_is_R(){
+    public void should_direction_N_when_turn_given_direction_is_W_and_turnDirection_is_R(){
         //Given
         String turnDirection = "R";
-        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(0,0,"N");
+        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(0,0,"W");
         MarsRover marsRover = new MarsRover();
+        MarsRoverCoordinate coordinate = marsRover.initMarsRover(currentCoordinate);
 
         //When
-        MarsRoverCoordinate coordinate = marsRover.turn(currentCoordinate,turnDirection);
+        coordinate = marsRover.turn(turnDirection);
 
         //Then
         assertThat(coordinate.getLocalX(), is(0));
         assertThat(coordinate.getLocalY(), is(0));
-        assertThat(coordinate.getDirection(), is("E"));
+        assertThat(coordinate.getDirection(), is("N"));
     }
 }
