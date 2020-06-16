@@ -21,13 +21,7 @@ public class MarsRoverTest {
     @Test
     public void should_positionY_add_1_when_move_given_direction_is_E(){
         //Given
-        String direction = "E";
-        int X = 0;
-        int Y = 0;
-        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate();
-        currentCoordinate.setLocalX(X);
-        currentCoordinate.setLocalY(Y);
-        currentCoordinate.setDirection(direction);
+        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(0,0,"E");
         MarsRover marsRover = new MarsRover();
 
         //When
@@ -42,13 +36,7 @@ public class MarsRoverTest {
     @Test
     public void should_positionY_subtract_1_when_move_given_direction_is_S(){
         //Given
-        String direction = "S";
-        int X = 0;
-        int Y = 0;
-        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate();
-        currentCoordinate.setLocalX(X);
-        currentCoordinate.setLocalY(Y);
-        currentCoordinate.setDirection(direction);
+        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(0,0,"S");
         MarsRover marsRover = new MarsRover();
 
         //When
@@ -63,13 +51,7 @@ public class MarsRoverTest {
     @Test
     public void should_positionX_subtract_1_when_move_given_direction_is_W(){
         //Given
-        String direction = "W";
-        int X = 0;
-        int Y = 0;
-        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate();
-        currentCoordinate.setLocalX(X);
-        currentCoordinate.setLocalY(Y);
-        currentCoordinate.setDirection(direction);
+        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(0,0,"W");
         MarsRover marsRover = new MarsRover();
 
         //When
@@ -84,13 +66,7 @@ public class MarsRoverTest {
     @Test
     public void should_positionY_add_1_when_move_given_direction_is_N(){
         //Given
-        String direction = "N";
-        int X = 0;
-        int Y = 0;
-        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate();
-        currentCoordinate.setLocalX(X);
-        currentCoordinate.setLocalY(Y);
-        currentCoordinate.setDirection(direction);
+        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(0,0,"N");
         MarsRover marsRover = new MarsRover();
 
         //When
@@ -105,13 +81,7 @@ public class MarsRoverTest {
     @Test
     public void should_direction_E_when_rightTurn_given_direction_is_N(){
         //Given
-        String direction = "N";
-        int X = 0;
-        int Y = 0;
-        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate();
-        currentCoordinate.setLocalX(X);
-        currentCoordinate.setLocalY(Y);
-        currentCoordinate.setDirection(direction);
+        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(0,0,"N");
         MarsRover marsRover = new MarsRover();
 
         //When
@@ -126,13 +96,7 @@ public class MarsRoverTest {
     @Test
     public void should_direction_W_when_leftTurn_given_direction_is_N(){
         //Given
-        String direction = "N";
-        int X = 0;
-        int Y = 0;
-        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate();
-        currentCoordinate.setLocalX(X);
-        currentCoordinate.setLocalY(Y);
-        currentCoordinate.setDirection(direction);
+        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(0,0,"N");
         MarsRover marsRover = new MarsRover();
 
         //When

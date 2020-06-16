@@ -1,9 +1,15 @@
 package com.thoughtworks;
 
 public class MarsRoverCoordinate {
-    private int localX = 0;
-    private int localY = 0;
-    private String direction= "N";
+    private int localX;
+    private int localY;
+    private String direction;
+
+    public MarsRoverCoordinate(int localX, int localY, String direction){
+        this.localX = localX;
+        this.localY = localY;
+        this.direction = direction;
+    }
 
     public int getLocalX() {
         return localX;

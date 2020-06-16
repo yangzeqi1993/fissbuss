@@ -1,7 +1,7 @@
 package com.thoughtworks;
 
 public class MarsRover {
-    MarsRoverCoordinate marsRoverCoordinate = new MarsRoverCoordinate();
+ //   MarsRoverCoordinate marsRoverCoordinate = new MarsRoverCoordinate();
 //    public MarsRoverCoordinate initMarsRover(String conmands, ){
 //        String[] str = conmands.split(",");
 //        String x=str[0].split("(")
