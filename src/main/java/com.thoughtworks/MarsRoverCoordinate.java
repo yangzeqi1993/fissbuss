@@ -11,6 +11,7 @@ public class MarsRoverCoordinate {
         this.direction = direction;
     }
 
+
     public int getLocalX() {
         return localX;
     }

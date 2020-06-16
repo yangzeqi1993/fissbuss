@@ -4,8 +4,21 @@ public class MarsRover {
 
     public MarsRoverCoordinate marsRoverCoordinate;
 
+
     public MarsRoverCoordinate initMarsRover(MarsRoverCoordinate marsRoverCoordinate){
         return this.marsRoverCoordinate = marsRoverCoordinate;
+    }
+
+    public MarsRoverCoordinate MarsRoverCommand(String commandStr){
+        char[] commandCharArray=commandStr.toCharArray();
+        for(char command:commandCharArray){
+            if ("N".equals(String.valueOf(command))){
+                this.marsRoverCoordinate = this.move();
+            }else if("L".equals(String.valueOf(command)) || "R".equals(String.valueOf(command))){
+                this.marsRoverCoordinate = this.turn(String.valueOf(command));
+            }
+        }
+        return this.marsRoverCoordinate;
     }
 
     public MarsRoverCoordinate move(){
