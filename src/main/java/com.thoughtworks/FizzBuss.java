@@ -40,17 +40,23 @@ public class FizzBuss {
         }
 
         if (String.valueOf(number).contains("7")) {
-            if (number % 3 == 0) {
-                stringContainSeven += "fizz";
+
+            if (String.valueOf(number).contains("3")) {
+                stringContainSeven +=  "fizz";
             }
+
+            if (String.valueOf(number).contains("5") && !String.valueOf(number).contains("3")) {
+                if (number % 3 == 0) {
+                    stringContainSeven += "fizz";
+                }
+            }
+
             if (number % 7 == 0) {
                 stringContainSeven += "whizz";
             }
-            if (number % 3 != 0 && number % 7 != 0) {
+
+            if (number % 3 != 0 && number % 7 != 0 && !String.valueOf(number).contains("3") && !String.valueOf(number).contains("5")) {
                 stringContainSeven = Integer.toString(number);
-            }
-            if (String.valueOf(number).contains("3")) {
-                stringContainSeven =  "fizz";
             }
             string = stringContainSeven;
         }

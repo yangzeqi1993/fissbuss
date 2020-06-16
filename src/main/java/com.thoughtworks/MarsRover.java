@@ -9,6 +9,30 @@ public class MarsRover {
 //    }
 
     public MarsRoverCoordinate move(MarsRoverCoordinate marsRoverCoordinate){
+        int moveStep = 1;
+        String currentDirection = marsRoverCoordinate.getDirection();
+        switch (currentDirection){
+            case "N":
+                marsRoverCoordinate.setLocalY(marsRoverCoordinate.getLocalY()+moveStep);
+                break;
+            case "E":
+                marsRoverCoordinate.setLocalX(marsRoverCoordinate.getLocalX()+moveStep);
+                break;
+            case "S":
+                marsRoverCoordinate.setLocalY(marsRoverCoordinate.getLocalY()-moveStep);
+                break;
+            case "W":
+                marsRoverCoordinate.setLocalX(marsRoverCoordinate.getLocalX()-moveStep);
+                break;
+        }
         return marsRoverCoordinate;
-    };
+    }
+
+    public MarsRoverCoordinate leftTurn(MarsRoverCoordinate marsRoverCoordinate){
+        return marsRoverCoordinate;
+    }
+
+    public MarsRoverCoordinate rightTurn(MarsRoverCoordinate marsRoverCoordinate){
+        return marsRoverCoordinate;
+    }
 }

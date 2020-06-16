@@ -140,14 +140,14 @@ public class FizzBussTest {
     @Test
     public void should_return_fizz_when_fizzbuss_given_753(){
         //Give
-        int number = 753;
+        int number = 735;
         FizzBuss fizzBuss = new FizzBuss();
 
         //When
         String word = fizzBuss.fizzBussGame(number);
 
         //Then
-        assertThat(word, is("fizz"));
+        assertThat(word, is("fizzwhizz"));
     }
 
     @Test
