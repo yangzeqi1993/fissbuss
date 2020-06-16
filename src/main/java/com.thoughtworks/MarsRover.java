@@ -26,6 +26,18 @@ public class MarsRover {
         return marsRoverCoordinate;
     }
 
+    public MarsRoverCoordinate turn(MarsRoverCoordinate marsRoverCoordinate, String turnDirection){
+        switch (turnDirection) {
+            case "L":
+                marsRoverCoordinate = this.leftTurn(marsRoverCoordinate);
+                break;
+            case "R":
+                marsRoverCoordinate = this.rightTurn(marsRoverCoordinate);
+                break;
+        }
+        return marsRoverCoordinate;
+    }
+
     public MarsRoverCoordinate leftTurn(MarsRoverCoordinate marsRoverCoordinate) {
         String currentDirection = marsRoverCoordinate.getDirection();
         switch (currentDirection) {
@@ -63,4 +75,5 @@ public class MarsRover {
         }
         return marsRoverCoordinate;
     }
+
 }

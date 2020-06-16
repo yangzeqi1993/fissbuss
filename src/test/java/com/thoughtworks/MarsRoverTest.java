@@ -110,4 +110,36 @@ public class MarsRoverTest {
         assertThat(coordinate.getLocalY(), is(0));
         assertThat(coordinate.getDirection(), is("W"));
     }
+
+    @Test
+    public void should_direction_W_when_turn_given_direction_is_N_and_turnDirection_is_L(){
+        //Given
+        String turnDirection = "L";
+        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(0,0,"N");
+        MarsRover marsRover = new MarsRover();
+
+        //When
+        MarsRoverCoordinate coordinate = marsRover.turn(currentCoordinate,turnDirection);
+
+        //Then
+        assertThat(coordinate.getLocalX(), is(0));
+        assertThat(coordinate.getLocalY(), is(0));
+        assertThat(coordinate.getDirection(), is("W"));
+    }
+
+    @Test
+    public void should_direction_W_when_turn_given_direction_is_N_and_turnDirection_is_R(){
+        //Given
+        String turnDirection = "R";
+        MarsRoverCoordinate currentCoordinate = new MarsRoverCoordinate(0,0,"N");
+        MarsRover marsRover = new MarsRover();
+
+        //When
+        MarsRoverCoordinate coordinate = marsRover.turn(currentCoordinate,turnDirection);
+
+        //Then
+        assertThat(coordinate.getLocalX(), is(0));
+        assertThat(coordinate.getLocalY(), is(0));
+        assertThat(coordinate.getDirection(), is("E"));
+    }
 }
