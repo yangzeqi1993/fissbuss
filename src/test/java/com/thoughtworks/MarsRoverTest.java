@@ -9,13 +9,16 @@ public class MarsRoverTest {
     @Test
     public void should_return_location_and_direction_when_init_given_conmands(){
         //Given
-        String conmands = "(0,0)N";
+        MarsRoverCoordinate initCoordinate = new MarsRoverCoordinate(1,1,"E");
+        MarsRover marsRover = new MarsRover();
 
         //When
-
+        MarsRoverCoordinate coordinate = marsRover.initMarsRover(initCoordinate);
 
         //Then
-
+        assertThat(coordinate.getLocalX(), is(1));
+        assertThat(coordinate.getLocalY(), is(1));
+        assertThat(coordinate.getDirection(), is("E"));
     }
 
     @Test
